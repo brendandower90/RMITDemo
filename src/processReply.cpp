@@ -74,9 +74,6 @@ void changeConfig(char* configChangeString, int len)
    const char* key = part[0];
    char* val = part[1];
 
-   debugl(key);
-   debugl(val);
-
    if (!strcmp(key, "led")){
       changeLED(val);
    }

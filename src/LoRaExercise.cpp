@@ -25,7 +25,7 @@ void setup()
    configRTC();
 
    debug("Epoch is: "); debugl(epoch);
-   printEpochTime(rtc);
+
 
 }
 
@@ -53,11 +53,13 @@ void loop()
 
    if (RTCTriggered){
       float temp = getTemperature();
+      printEpochTime(rtc);
       LoRaSend(temp);
+      RTCTriggered = 0;
    }
 
 
-   delay(5000);
+//   delay(5000);
 
 }
 

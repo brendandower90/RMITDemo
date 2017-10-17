@@ -16,9 +16,7 @@ void changeLED(char* colour){
    else if (!strcmp(colour,"magenta"))
       RGB(MAGENTA);
    else if (!strcmp(colour,"off")){
-      digitalWrite(LED_BLUE, HIGH);
-      digitalWrite(LED_RED, HIGH);
-      digitalWrite(LED_GREEN,HIGH);
+      RGBOFF();
    }
    else
       debugl("ERROR: Invalid Colour");
@@ -47,9 +45,7 @@ void addLED(char* colour){
       RGB(WHITE);
    }
    else if (!strcmp(colour,"off")){
-      digitalWrite(LED_BLUE, HIGH);
-      digitalWrite(LED_RED, HIGH);
-      digitalWrite(LED_GREEN,HIGH);
+      RGBOFF();
    }
    else
       debugl("ERROR: Invalid Colour");
@@ -78,14 +74,18 @@ void subLED(char* colour){
       strcpy(colour,"off");
    }
    else if (!strcmp(colour,"off")){
-      digitalWrite(LED_BLUE, HIGH);
-      digitalWrite(LED_RED, HIGH);
-      digitalWrite(LED_GREEN,HIGH);
+      RGBOFF();
    }
    else
       debugl("ERROR: Invalid Colour");
 }
 
+void RGBOFF()
+{
+   digitalWrite(LED_BLUE, HIGH);
+   digitalWrite(LED_RED, HIGH);
+   digitalWrite(LED_GREEN,HIGH);
+}
 
 void RGB(byte r, byte g, byte b)
 {

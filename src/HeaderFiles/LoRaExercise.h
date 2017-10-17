@@ -4,7 +4,6 @@
 #define ledR LED_RED
 #define ledG LED_GREEN
 #define ledB LED_BLUE
-#define RGBOFF RGB(0,0,0)
 
 //debugging Macros
 #define debugSetup SerialUSB.begin(57600);
@@ -55,3 +54,4 @@ void changeLED(char* colour);
 void addLED(char* colour);
 void subLED(char* colour);
 void RGB(byte r, byte g, byte b);
+void RGBOFF();
