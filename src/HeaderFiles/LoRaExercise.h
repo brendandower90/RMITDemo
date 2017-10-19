@@ -38,7 +38,7 @@
 #define freqPlan TTN_FP_US915
 
 //RTC Macros
-#define PERIOD 30    //Interval of Sleeping
+#define PERIOD 5    //Interval of Sleeping
 
 //LoRaWAN Functions
 void configLoRa();

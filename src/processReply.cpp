@@ -77,10 +77,10 @@ void changeConfig(char* configChangeString, int len)
    if (!strcmp(key, "led")){
       changeLED(val);
    }
-   else if (!strcmp(key, "led+")){
+   else if (!strcmp(key, "add")){
       addLED(val);
    }
-   else if (!strcmp(key, "led-")){
+   else if (!strcmp(key, "sub")){
       subLED(val);
    }
    else

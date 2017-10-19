@@ -3,6 +3,7 @@
 #include "HeaderFiles/LoRaExercise.h"
 
 void changeLED(char* colour){
+   debug("Making LED "); debugl(colour);
    if (!strcmp(colour,"red"))
       RGB(RED);
    else if (!strcmp(colour,"green"))
@@ -11,9 +12,9 @@ void changeLED(char* colour){
       RGB(BLUE);
    else if (!strcmp(colour,"cyan"))
       RGB(CYAN);
-   else if (!strcmp(colour,"yellow"))
+   else if (!strcmp(colour,"yell"))
       RGB(YELLOW);
-   else if (!strcmp(colour,"magenta"))
+   else if (!strcmp(colour,"pink"))
       RGB(MAGENTA);
    else if (!strcmp(colour,"off")){
       RGBOFF();
@@ -23,6 +24,7 @@ void changeLED(char* colour){
 }
 
 void addLED(char* colour){
+   debug("Turning "); debug(colour); debugl("LED on");
    if (!strcmp(colour,"red"))
       digitalWrite(LED_RED, LOW);
    else if (!strcmp(colour,"green"))
@@ -33,11 +35,11 @@ void addLED(char* colour){
       digitalWrite(LED_BLUE, LOW);
       digitalWrite(LED_GREEN, LOW);
    }
-   else if (!strcmp(colour,"yellow")){
+   else if (!strcmp(colour,"yell")){
       digitalWrite(LED_RED, LOW);
       digitalWrite(LED_GREEN,LOW);
    }
-   else if (!strcmp(colour,"magenta")){
+   else if (!strcmp(colour,"pink")){
       digitalWrite(LED_RED, LOW);
       digitalWrite(LED_BLUE, LOW);
    }
@@ -52,6 +54,7 @@ void addLED(char* colour){
 }
 
 void subLED(char* colour){
+   debug("Turning "); debug(colour); debug("LED off");
    if (!strcmp(colour,"red"))
       digitalWrite(LED_RED, HIGH);
    else if (!strcmp(colour,"green"))
